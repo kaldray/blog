@@ -1,0 +1,28 @@
+{
+  "name": "@dray/root",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "shared/*"
+  ],
+  "scripts": {
+    "prepare": "husky install",
+    "web": "npm run dev -w @dray/frontend",
+    "api": "npm run dev -w @dray/api",
+    "dev": "npm run dev --workspace=apps",
+    "panda:watch": "npm run panda --watch -w @dray/frontend",
+    "panda:codegen": "npm run prepare -w @dray/frontend"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3"
+  },
+  "lint-staged": {
+    "**/*.{js,ts,tsx,mjs,css}": [
+      "prettier --write"
+    ]
+  }
+}
