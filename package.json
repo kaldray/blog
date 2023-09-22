@@ -12,7 +12,8 @@
     "api": "npm run dev -w @dray/api",
     "dev": "npm run dev --workspace=apps",
     "panda:watch": "npm run panda --watch -w @dray/frontend",
-    "panda:codegen": "npm run prepare -w @dray/frontend"
+    "panda:codegen": "npm run prepare -w @dray/frontend",
+    "panda:codegen-clean": "npm run clean -w @dray/frontend"
   },
   "license": "ISC",
   "devDependencies": {

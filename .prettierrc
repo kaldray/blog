@@ -1,8 +1,10 @@
 {
-    "bracketSameLine": true,
-    "jsxSingleQuote": false,
-    "semi": true,
-    "singleAttributePerLine": false,
-    "printWidth": 100,
-    "htmlWhitespaceSensitivity": "css"
+  "bracketSameLine": true,
+  "jsxSingleQuote": false,
+  "semi": true,
+  "singleAttributePerLine": false,
+  "printWidth": 100,
+  "htmlWhitespaceSensitivity": "css",
+  "arrowParens": "always",
+  "trailingComma": "all"
 }
