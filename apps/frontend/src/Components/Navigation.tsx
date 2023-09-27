@@ -1,10 +1,9 @@
 "use client";
-import { type PropsWithChildren } from "react";
+
 import { hstack } from "@style-system/patterns";
+import { NavLink } from "./NavLink";
 
-type NavigationProps = PropsWithChildren;
-
-export const Navigation = ({ children }: NavigationProps) => {
+export const Navigation = () => {
   return (
     <>
       <nav
@@ -16,9 +15,8 @@ export const Navigation = ({ children }: NavigationProps) => {
           position: "sticky",
           top: "0",
         })}>
-        <p>Logo</p>
+        <NavLink href={"/"}>Accueil</NavLink>
       </nav>
-      {children}
     </>
   );
 };
