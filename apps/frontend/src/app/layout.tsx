@@ -1,21 +1,22 @@
 import "@style/globals.css";
 import type { Metadata } from "next";
+
 import { MontserratFont } from "@app/styles/font";
-import { Navigation } from "@app/Components/Navigation";
 import { css } from "@style-system/css";
+import { MyRootLayout } from "@app/Components/MyRootLayout";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Je m'amuse un peu !",
+  description: "Le blog d'un dev.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
       <body className={`${MontserratFont.variable}`}>
-        <Navigation>
+        <MyRootLayout>
           <main className={css({ height: "dvh" })}>{children}</main>
-        </Navigation>
+        </MyRootLayout>
       </body>
     </html>
   );
