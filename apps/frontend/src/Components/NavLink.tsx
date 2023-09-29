@@ -9,7 +9,7 @@ import { type RecipeVariantProps, cva, cx } from "@style-system/css";
 type NavLinkProps = {} & LinkProps & PropsWithChildren & LinkVariants & ComponentPropsWithRef<"a">;
 type LinkVariants = RecipeVariantProps<typeof linkStyle>;
 
-const linkStyle = cva({
+export const linkStyle = cva({
   base: {
     fontFamily: "montserrat",
     fontSize: "1.125rem",
@@ -45,7 +45,7 @@ export const NavLink = forwardRef(function Render(
   const elmClass = cx(linkStyle({ state: pathname === href ? "active" : "default" }), className);
   return (
     <>
-      <Link href={href} className={elmClass} {...props}>
+      <Link prefetch={true} href={href} className={elmClass} {...props}>
         {children}
       </Link>
     </>
