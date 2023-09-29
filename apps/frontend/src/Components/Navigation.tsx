@@ -16,6 +16,7 @@ export const Navigation = () => {
           top: "0",
         })}>
         <NavLink href={"/"}>Accueil</NavLink>
+        <NavLink href={"/articles"}>Articles</NavLink>
       </nav>
     </>
   );
