@@ -1,9 +1,11 @@
-import { Typographie } from "@app/Components/Typographie";
-import type { ArticlesApiResponse } from "@app/types";
-import { css } from "@style-system/css";
-import { vstack } from "@style-system/patterns";
 import Link from "next/link";
 import Image from "next/image";
+
+import { Typographie } from "@app/Components/Typographie";
+import { css } from "@style-system/css";
+import { vstack } from "@style-system/patterns";
+
+import type { ArticlesApiResponse } from "@app/types";
 
 const getData = async () => {
   const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/articles`);
