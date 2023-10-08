@@ -11,7 +11,7 @@ export default factories.createCoreController(
     async find(ctx) {
       const { data, meta } = await super.find(ctx);
       data.forEach((d) => {
-        const base = "http://localhost:1337";
+        const base = process.env.API_URL;
         const relativePath = d.attributes.cover.data.attributes.url;
         d.attributes.cover.data.attributes.url = base + relativePath;
       });
