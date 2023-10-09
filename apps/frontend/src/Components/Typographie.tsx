@@ -1,6 +1,6 @@
 import { cva, cx } from "@style-system/css";
 import type React from "react";
-import type { ComponentPropsWithoutRef } from "react";
+import type { ComponentPropsWithoutRef, PropsWithChildren } from "react";
 
 const typographieStyle = cva({
   base: {
@@ -14,6 +14,18 @@ const typographieStyle = cva({
       },
       h2: {
         fontSize: "3xl",
+      },
+      a: {
+        fontSize: "20px",
+        display: "inline-block",
+        transform: "scale(1)",
+        transition: "100ms linear",
+        _active: {
+          transform: "scale(1.1)",
+        },
+        _hover: {
+          textDecoration: "underline",
+        },
       },
       h3: { fontSize: "2xl" },
       h4: { fontSize: "large" },
@@ -30,8 +42,8 @@ export type TypographieVariant = NonNullable<(typeof typographieStyle)["__type"]
 
 type TypographieProps<T extends TypographieVariant> = {
   tag: T;
-  children: React.ReactNode;
-} & ComponentPropsWithoutRef<T>;
+} & ComponentPropsWithoutRef<T> &
+  PropsWithChildren;
 
 export const Typographie = <T extends TypographieVariant>({
   tag,

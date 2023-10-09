@@ -7,6 +7,7 @@ import { BackLink } from "@app/Components/BackLink";
 import { Hero } from "../../../Components/Hero";
 
 import type { ArticlesApiResponse } from "@app/types";
+import { Typographie } from "@app/Components/Typographie";
 
 export async function generateStaticParams() {
   const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/articles`);
@@ -52,9 +53,19 @@ export default async function Page({ params: { uid } }: PageProps) {
         <BackLink />
       </Hero>
       <section className={css({ display: "grid", placeContent: "center", mt: "5" })}>
-        <Suspense fallback={<p>loading</p>}>
-          <MDXRemote source={article.attributes.content} />
-        </Suspense>
+        <div>
+          <Suspense fallback={<p>loading</p>}>
+            <MDXRemote
+              source={article.attributes.content}
+              components={{
+                p: (props) => (
+                  <Typographie tag="p" className={css({ fontSize: "20px" })} {...props} />
+                ),
+                a: (props) => <Typographie tag="a" {...props} />,
+              }}
+            />
+          </Suspense>
+        </div>
       </section>
     </>
   );
